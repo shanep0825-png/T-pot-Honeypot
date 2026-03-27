@@ -1,9 +1,7 @@
-Overview
 This project focused on deploying a T-Pot honeypot in a cloud-hosted DigitalOcean droplet and monitoring real-world attack activity against it. The goal was to gain hands-on experience with honeypot technology, understand how internet-exposed systems attract traffic, and observe attacker behavior through the T-Pot dashboard and Kibana.
 
-I had been interested in honeypots for a while because I wanted to see how they actually worked in practice. This project gave me a way to move beyond theory and interact with real attack telemetry in a controlled environment.
 
-Objective
+
 The main objective of this lab was to:
 
 Deploy a publicly reachable T-Pot honeypot in the cloud
@@ -11,7 +9,9 @@ Access and manage it remotely using SSH from PowerShell
 Monitor attack activity through the T-Pot web interface
 Review events in Kibana to identify brute-force attempts and targeted services
 Build foundational experience in threat monitoring and honeypot analysis
-Environment
+
+
+
 Platform: DigitalOcean
 
 Instance Type: 4 vCPUs, 8 GB memory, 50 GB SSD
@@ -22,8 +22,6 @@ Management Method: SSH from local machine using PowerShell
 
 Honeypot Platform: T-Pot
 
-What T-Pot Is
-T-Pot is an all-in-one honeypot platform that combines multiple honeypot services with monitoring and visualization tools. It is designed to collect attack activity from internet-exposed services and present that data through dashboards and analytics tools.
 
 Project Workflow
 Provisioned the cloud environment
@@ -65,13 +63,13 @@ Step-by-Step Lab Notes
 This section is written to reflect the setup flow I followed as closely as possible based on my own actions and the referenced tutorial. Tutorial I Followed.
 
 What I Observed
-I didn't exactly know what I was looking at at first, but within about 20 minutes, the honeypot was already receiving a noticeable amount of activity. I observed traffic from multiple countries, including:
+Within a few minutes the honeypot was already receiving a noticeable amount of activity. I observed traffic from multiple countries, including:
 
 United States
 Romania
 United Kingdom
 France
-My first impression overall impression was excitement as I couldn't believe I was seeing real attacks. I also noticed that a large portion of this traffic appeared to be automated bot activity, especially because in Kibana some of the username and password fields appeared as null. I would only see brute-force attempts in a SSH attack.
+I first noticed that a large portion of this traffic appeared to be automated bot activity, especially because in Kibana some of the username and password fields appeared as null. I would only see brute-force attempts in a SSH attack.
 
 I returned the next day after letting the honeypot continue overnight, and I was able to observe more attack types and review them in more depth through Kibana.
 
@@ -85,6 +83,7 @@ RPC activity
 HTTP activity
 This, to me, was one of the most interesting parts of the lab because it showed how quickly publicly exposed infrastructure begins attracting opportunistic scans and automated attack attempts.
 
+
 Analysis Experience
 The most valuable part of this project was not just installing the honeypot, but learning how to interpret what I was seeing once the data started coming in. At first, I did not fully understand everything happening during setup. I only began understanding the environment better once the deployment was complete and I could start reviewing the attack telemetry myself.
 
@@ -97,7 +96,12 @@ Attack surface monitoring
 SSH brute-force observation
 Threat telemetry review in Kibana
 Basic event analysis and service targeting awareness
-What I Learned
+
+
+
+
+
+
 This project taught me several important lessons:
 
 Internet-exposed systems receive traffic very quickly
@@ -110,25 +114,11 @@ Attackers probe many services, not just SSH
 Before this lab, I mainly associated internet-facing attacks with SSH brute force. After reviewing the data, I saw activity across several protocols and services, including SMB, Telnet, MySQL, HTTP, RPC, and SQL-related traffic.
 
 Visualization tools make security data easier to interpret
-The T-Pot dashboard and Kibana made it much easier to move from “something is happening” to “I can identify what services are being targeted and how.”
+The T-Pot dashboard and Kibana made it much easier to move from “something is happening” to “I can identify what services are being targeted and how."
 
-Challenges
-This project was successful, but one honest takeaway is that I did not fully understand every installation step while I was doing it. I followed the tutorial exactly and gained the most understanding after the system was already running and I could analyze the collected data.
 
-That said, this was still valuable because it reflects a real learning process.
 
-Personal Reflection
-This was one of the most exciting labs I have done so far. My immediate reaction after seeing real attack traffic was: I think this is insanely awesome. The fact that real machines are trying to attack me and it’s not a little amount of them either. That reaction and initial excitement is what made this project stand out to me. It turned a concept I had only heard about into something I could actually deploy, monitor, and learn from in real time.
-
-Future Improvements
-I will continue building on this project, possible next steps include:
-
-running the honeypot longer to collect more data and possibly creating a database in Elasticvue
-documenting repeated IPs, ports, usernames, and attack patterns
-comparing attack volume across time periods
-adding firewall controls and documenting their effect
-performing deeper Kibana analysis and creating custom visualizations
-studying which T-Pot components generated<img width="1899" height="1010" alt="Screenshot 2026-03-18 170713" src="https://github.com/user-attachments/assets/37d798ea-8fe3-45f7-8572-6c5353862de4" />
+<img width="1899" height="1010" alt="Screenshot 2026-03-18 170713" src="https://github.com/user-attachments/assets/37d798ea-8fe3-45f7-8572-6c5353862de4" />
 <img width="1902" height="1007" alt="Screenshot 2026-03-18 170411" src="https://github.com/user-attachments/assets/daf25aad-26a7-47fb-8e81-dd4be3500845" />
  which logs
 Relevant Images
