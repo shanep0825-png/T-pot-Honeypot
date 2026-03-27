@@ -120,5 +120,4 @@ The T-Pot dashboard and Kibana made it much easier to move from “something is 
 
 <img width="1899" height="1010" alt="Screenshot 2026-03-18 170713" src="https://github.com/user-attachments/assets/37d798ea-8fe3-45f7-8572-6c5353862de4" />
 <img width="1902" height="1007" alt="Screenshot 2026-03-18 170411" src="https://github.com/user-attachments/assets/daf25aad-26a7-47fb-8e81-dd4be3500845" />
- which logs
-Relevant Images
+
